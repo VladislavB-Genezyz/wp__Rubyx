@@ -3,6 +3,8 @@
 function wpRubyx_setup(){
 	load_theme_textdomain( 'wpRubyx');
 	add_theme_support( 'title-tag' );
+	// add_theme_support( 'post-thumbnails' );
+	// set_post_thumbnail_size( , $height = 0, $crop = false )os
 	add_theme_support( 'html5', array(
 		'search_form',
 		'comment_form',
@@ -21,6 +23,12 @@ function wpRubyx_setup(){
 }
 add_action('after_setup_theme', 'wpRubyx_setup');
 
+
+add_filter('excerpt_more', function($more) {
+	return ' ...';
+});
+
+
 function load_css_scripts(){
 	wp_enqueue_style('style.css', get_stylesheet_uri());		
 	// wp_enqueue_style('aural', get_template_directory_uri().'/css/aural.css');
@@ -30,4 +38,19 @@ function load_css_scripts(){
 	
 }
 add_action( 'wp_enqueue_scripts', 'load_css_scripts' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
