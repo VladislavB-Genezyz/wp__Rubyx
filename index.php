@@ -40,7 +40,7 @@
       <?php } // end while
       } // end if
       ?>
-      
+      <?php wp_bootstrap_pagination_rubyx();?>
     </div>
     <!--sidebar here -->
     <?php get_sidebar(); ?>

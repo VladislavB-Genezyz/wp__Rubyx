@@ -166,11 +166,11 @@ body.logged-in{ margin-top: 30px; }
     #col #about-me #me {float:left; width:54px; height:58px; margin-right:7px;}
 
     /* Right column - Category */
-    #col ul#category {margin:15px 0; padding:0; list-style:none;}
-    #col ul#category li {margin:0; padding:0; border-bottom:1px solid #ffdbe3;}
-    #col ul#category li a {display:block; padding:3px 0 3px 22px; background:url("./img/ico_archive.gif") 5px 6px no-repeat; text-decoration:none;}
-    #col ul#category li a:hover {background-color:#ffccd8; color:#7f000b;}
-    #col ul#category li#category-active a {background:#ffdbe3 url("./img/ico_archive2.gif") 5px 50% no-repeat; font-weight:bold;}
+    #col ul {margin:15px 0; padding:0; list-style:none;}
+    #col ul li {margin:0; padding:0; border-bottom:1px solid #ffdbe3;}
+    #col ul li a {display:block; padding:3px 0 3px 22px; background:url("./img/ico_archive.gif") 5px 6px no-repeat; text-decoration:none;}
+    #col ul li a:hover {background-color:#ffccd8; color:#7f000b;}
+    #col ul li.current-cat a {background:#ffdbe3 url("./img/ico_archive2.gif") 5px 50% no-repeat; font-weight:bold;}
     
     /* Right column - Archive */
     #col ul#archive {margin:15px 0; padding:0; list-style:none;}

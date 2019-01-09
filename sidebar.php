@@ -8,7 +8,13 @@
         <a href="#">Profile on MySpace</a></p>
       </div>
       <hr class="noscreen" />
-      <h3 ><span>Category</span></h3>
+      
+      <?php 
+        if(is_active_sidebar( 'sidebar-1' )){
+          dynamic_sidebar('sidebar-1');
+        }
+      ?>
+<!--       <h3 ><span>Category</span></h3>
       <ul id="category">
         <li id="category-active"><a href="http://web-mastery.info/">Selected category</a></li>
         <li><a href="#">Category</a></li>
@@ -16,7 +22,7 @@
         <li><a href="#">Category</a></li>
         <li><a href="#">Category</a></li>
       </ul>
-      <hr class="noscreen" />
+      <hr class="noscreen" /> -->
       <h3><span>Archive</span></h3>
       <ul id="archive">
         <li><a href="#">January 2007</a></li>
