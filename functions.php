@@ -45,10 +45,10 @@ function rubyx_the_breadcrumb(){
 	   echo '<a href="'.site_url().'">Home</a> &gt';
 		if(is_single()){ // posts
 		the_category(', ');
-		echo " <li> / </li> ";
+		echo "  ";
 		echo '<li>';
 			the_title();
-		echo '</li>';
+		echo '';
 		}
 		elseif (is_page()) { // pages
 			if ($post->post_parent ) {
@@ -108,7 +108,7 @@ function rubyx_the_breadcrumb(){
 	   if($pageNum>1)
 	      echo '<a href="'.site_url().'">Home</a> &gt'.$pageNum.'- page';
 	   else
-	      echo '<li><i class="fa fa-home" aria-hidden="true"></i>Home</li>';
+	      echo 'Home';
 	}
 }
 
