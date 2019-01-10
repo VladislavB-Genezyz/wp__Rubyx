@@ -1,14 +1,18 @@
-<?php 
-get_header();?>
+<?php get_header();?>
 <div id="page" class="box">
   <div id="page-in" class="box">
-
     <?php get_template_part('template__parts/breadcrumbs');?>
 
     <div id="content">
       <!-- Post here -->
+      <?php 
+        get_template_part('template__parts/content','page');?>
+    <!-- Comments here -->
       <?php
-        get_template_part('template__parts/content', get_post_format());?>
+        if(comments_open() || get_comments_number() ){
+          comments_template();
+        }
+      ?>
       <!-- Pagination here -->
       <?php wp_bootstrap_pagination_rubyx();?>
     </div>

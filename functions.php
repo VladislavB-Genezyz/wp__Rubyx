@@ -45,8 +45,7 @@ function rubyx_the_breadcrumb(){
 	   echo '<a href="'.site_url().'">Home</a> &gt';
 		if(is_single()){ // posts
 		the_category(', ');
-		echo "  ";
-		echo '<li>';
+		echo " >  ";
 			the_title();
 		echo '';
 		}
@@ -60,7 +59,7 @@ function rubyx_the_breadcrumb(){
 					$parent_id  = $page->post_parent;
 				}
 				$breadcrumbs = array_reverse($breadcrumbs);
-				foreach ($breadcrumbs as $crumb) echo $crumb . '<li> / </li> ';
+				foreach ($breadcrumbs as $crumb) echo $crumb . ' ';
 			}
 			echo the_title();
 		}
@@ -71,7 +70,7 @@ function rubyx_the_breadcrumb(){
 			$current_cat = get_category($current_cat);
 			$parent_cat = get_category($current_cat->parent);
 			if ($current_cat->parent != 0) 
-				echo(get_category_parents($parent_cat, TRUE, ' <li> / </li> '));
+				echo(get_category_parents($parent_cat, TRUE, '  '));
 			single_cat_title();
 		}
 		elseif (is_search()) { // search pages
@@ -81,12 +80,12 @@ function rubyx_the_breadcrumb(){
 			echo single_tag_title('', false);
 		}
 		elseif (is_day()) { // archive (days)
-			echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> <li> / </li> ';
-			echo '<li><a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a></li> <li> / </li> ';
+			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ';
+			echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ';
 			echo get_the_time('d');
 		}
 		elseif (is_month()) { // archive (months)
-			echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> <li> / </li>';
+			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>';
 			echo get_the_time('F');
 		}
 		elseif (is_year()) { // archive (years)
@@ -95,9 +94,9 @@ function rubyx_the_breadcrumb(){
 		elseif (is_author()) { // authors
 			global $author;
 			$userdata = get_userdata($author);
-			echo '<li>Posted ' . $userdata->display_name . '</li>';
+			echo 'Posted ' . $userdata->display_name . '';
 		} elseif (is_404()) { // if page not found
-			echo '<li>Error 404</li>';
+			echo 'Error 404';
 		}
 	 
 		if (get_query_var('paged')) // number of page
@@ -265,6 +264,3 @@ add_action( 'widgets_init', 'rubyx_widgets_init' );
 
 
 /*Sidebar end*/
-
-
-?>
