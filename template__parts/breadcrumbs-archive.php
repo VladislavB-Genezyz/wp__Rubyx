@@ -4,7 +4,7 @@
 	<p id="breadcrumbs">You are here: 
 <!-- 		<a href="#">Home</a> &gt; <a href="#">Category</a> &gt; 
 		<strong>Page</strong> -->
-		<!-- <?php echo wp_get_document_title();?> -->
+		<?php the_archive_title( '<h2 class="adadad">', '</h2>' );?>
 		<?php rubyx_the_breadcrumb();?>
 	</p>
 	<hr class="noscreen" />
